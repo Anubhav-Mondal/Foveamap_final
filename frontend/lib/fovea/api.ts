@@ -13,7 +13,7 @@ export type TrackResponse = {
   modelId?:string;
   checkpointHash?:string;
 };
-const DEFAULT_URL = "http://127.0.0.1:8000";
+const DEFAULT_URL = "https://foveamap-final.onrender.com";
 
 export function backendUrl(){
   return process.env.NEXT_PUBLIC_FOVEAMAP_BACKEND_URL || DEFAULT_URL;
