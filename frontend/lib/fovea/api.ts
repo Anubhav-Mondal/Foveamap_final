@@ -15,14 +15,8 @@ export type TrackResponse = {
 };
 const DEFAULT_URL = "http://127.0.0.1:8000";
 
-export function backendUrl() {
-  return (
-    (
-      globalThis as typeof globalThis & {
-        process?: { env?: Record<string, string | undefined> };
-      }
-    ).process?.env?.NEXT_PUBLIC_FOVEAMAP_BACKEND_URL || DEFAULT_URL
-  );
+export function backendUrl(){
+  return process.env.NEXT_PUBLIC_FOVEAMAP_BACKEND_URL || DEFAULT_URL;
 }
 
 async function fileToBase64(file: File) {

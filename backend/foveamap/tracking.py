@@ -89,7 +89,7 @@ def extract_objects(points, labels=None, semantic_names=None, config=TrackingCon
         thickness = float(min(dims[0], dims[1]))
         height = float(dims[2])
 
-        class_name = "unclassified obstacle"
+        class_name = "building"
 
         if 1.2 < height < 2.4 and length < 1.2:
             class_name = "person heuristic"

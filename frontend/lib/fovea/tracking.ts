@@ -64,7 +64,7 @@ function classNameFromGeometry(dimensions: [number, number, number]): string {
     return 'barrier/object';
   }
 
-  return 'unclassified obstacle';
+  return 'building';
 }
 
 export function extractObjects(points: Point[], semantic?: number[], names?: Record<number, string>, cfg: TrackingConfig = TRACKING_DEFAULTS): TrackObject[] {
