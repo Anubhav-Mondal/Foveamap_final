@@ -11,7 +11,6 @@ import {
   Database,
   Eye,
   EyeOff,
-  FileText,
   Filter,
   Focus,
   Gauge,
@@ -82,7 +81,6 @@ import Scene from './scene';
 const nav = [
   ['workspace', 'Perception workspace', Map],
   ['metrics', 'Performance metrics', Gauge],
-  ['guide', 'Project guide', FileText],
   ['settings', 'Pipeline settings', SlidersHorizontal],
 ] as const;
 
@@ -1687,40 +1685,6 @@ export default function Home() {
                       }}
                     />
                   </div>
-                </section>
-              </div>
-            )}
-
-            {page === 'guide' && (
-              <div className="doc-grid">
-                <section className="panel large-panel prose">
-                  <h2>RELLIS sequence workflow</h2>
-                  <p>
-                    Select a folder that contains one or more five-digit RELLIS
-                    sequence folders. FoveaMap sorts frame filenames numerically and
-                    does not concatenate different sequences. .label files are optional
-                    and must match the exact point count.
-                  </p>
-                  <pre>
-                    {
-                      '00000/os1_cloud_node_kitti_bin/000000.bin\n00000/os1_cloud_node_kitti_bin/000001.bin\n00001/os1_cloud_node_kitti_bin/000000.bin'
-                    }
-                  </pre>
-                </section>
-
-                <section className="panel large-panel prose">
-                  <h2>Future model adapter</h2>
-                  <p>
-                    Imported predictions must preserve point order and use metres with
-                    feature order x,y,z,intensity. Model predictions require modelId
-                    and checkpointHash metadata. The current bundled MLP is synthetic-only
-                    and is not presented as a trained RELLIS model.
-                  </p>
-                  <p>
-                    Pose JSON support is documented in the backend README. Without
-                    validated world-from-LiDAR poses, real sequence motion is
-                    uncompensated.
-                  </p>
                 </section>
               </div>
             )}
